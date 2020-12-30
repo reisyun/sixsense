@@ -17,7 +17,13 @@
       "version": "detect"
     },
     "import/resolver": {
-      "node": { "extensions": [".ts", ".tsx"] }
+      "alias": {
+        "map": [
+          ["@assets", "./src/assets"],
+          ["@components", "./src/components"]
+        ],
+        "extensions": [".js", ".ts", ".tsx", ".css", ".scss"]
+      }
     }
   },
   "extends": [
