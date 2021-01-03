@@ -1,10 +1,15 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '@styles/global';
+import theme from '@styles/theme';
+import Text from '@components/atoms/Text';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">Hot reload?</header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Text color="primary">fdsa</Text>
+    </ThemeProvider>
   );
 }
 

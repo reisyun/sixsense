@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint"],
   "env": {
     "browser": true
   },
@@ -20,7 +20,8 @@
       "alias": {
         "map": [
           ["@assets", "./src/assets"],
-          ["@components", "./src/components"]
+          ["@components", "./src/components"],
+          ["@styles", "./src/styles"]
         ],
         "extensions": [".js", ".ts", ".tsx", ".css", ".scss"]
       }
@@ -31,15 +32,18 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
+    "prettier",
     "prettier/@typescript-eslint"
   ],
   "rules": {
-    "react/jsx-one-expression-per-line": "off",
+    "no-shadow": "off",
     "no-use-before-define": "off",
+    "react/jsx-one-expression-per-line": "off",
     "@typescript-eslint/no-use-before-define": "warn",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "import/extensions": [
