@@ -41,6 +41,7 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "import/extensions": [
       "error",
       "ignorePackages",
