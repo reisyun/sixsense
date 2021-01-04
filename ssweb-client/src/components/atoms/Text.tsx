@@ -1,46 +1,47 @@
-import React, { ReactText } from 'react';
-import styled, { css } from 'styled-components';
-import { TypeColor } from '@styles/theme/palette';
-import { TypeFontSize } from '@styles/theme/size';
+import React from 'react';
+import styled from '@emotion/styled';
+import { ColorType } from '@styles/theme/palette';
+import { FontSizeType } from '@styles/theme/size';
 import toEllipsis from '@styles/utils/ellipsis';
+
+/**
+ * Text styles
+ */
 
 type EllipsisConfig = {
   lines?: number;
 };
 
 interface StyledTextProps {
-  color?: keyof TypeColor;
-  fontSize?: keyof TypeFontSize;
-  strong?: boolean;
-  ellipsis?: boolean | EllipsisConfig;
+  color: keyof ColorType;
+  fontSize: keyof FontSizeType;
+  strong: boolean;
+  ellipsis: boolean | EllipsisConfig;
 }
 
 const StyledText = styled.span<StyledTextProps>`
   line-height: 1.5;
   word-break: break-word;
 
-  ${({ theme, color, fontSize, strong }) => css`
-    color: ${color && theme.palette.color[color]};
-    font-size: ${fontSize && theme.size.fontSize[fontSize]};
-    font-weight: ${strong && 'bold'};
-  `}
+  color: ${props => props.color && props.theme.palette.color[props.color]};
+  font-size: ${props => props.fontSize && props.theme.size.fontSize[props.fontSize]};
+  font-weight: ${props => (props.strong ? 'bold' : 'inherit')};
 
-  /* EllipsisConfig에서 라인을 설정 가능 */
-  ${({ ellipsis }) => `
-    ${typeof ellipsis === 'object' ? toEllipsis(ellipsis.lines) : toEllipsis()}
-  `}
+  ${({ ellipsis }) =>
+    /* EllipsisConfig가 있으면 설정에 따라 적용, 만약 boolean으로 넘어오면 true만 적용 */
+    typeof ellipsis === 'object' ? toEllipsis(ellipsis.lines) : ellipsis && toEllipsis()}
 `;
 
-interface TextProps extends StyledTextProps {
-  children: ReactText;
+/**
+ * Text component
+ */
+
+export interface TextProps extends StyledTextProps {
+  children: React.ReactText;
 }
 
-function Text({ children, ellipsis, ...restProps }: TextProps) {
-  return (
-    <StyledText {...restProps} ellipsis={ellipsis}>
-      {children}
-    </StyledText>
-  );
+function Text({ children, ...rest }: TextProps) {
+  return <StyledText {...rest}>{children}</StyledText>;
 }
 
 const defaultProps: StyledTextProps = {
