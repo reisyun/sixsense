@@ -1,14 +1,14 @@
-import { createGlobalStyle } from 'styled-components';
+import { css } from '@emotion/react';
 import { reset } from '@styles/global/reset';
 
-const GlobalStyle = createGlobalStyle`
+const global = css`
   ${reset}
 
   body {
     font-family: 'Noto Sans KR', sans-serif;
     box-sizing: border-box;
   }
-  
+
   *,
   *::after,
   *::before {
@@ -16,4 +16,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;
+export default global;

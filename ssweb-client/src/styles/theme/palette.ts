@@ -8,12 +8,6 @@ enum Color {
   black = '#000',
 }
 
-enum Background {
-  default = '#F7F9FC',
-  level1 = '#EFEFE',
-  divider = '#E0E0E0',
-}
-
 enum TagColor {
   all = '#767676',
   dataScience = '#2C3E50',
@@ -22,20 +16,26 @@ enum TagColor {
   devOps = '#CD6133',
 }
 
-export type TypeColor = typeof Color;
-export type TypeBackground = typeof Background;
-export type TypeTagColor = typeof TagColor;
+enum Background {
+  default = '#F7F9FC',
+  level1 = '#EFEFE',
+  divider = '#E0E0E0',
+}
+
+export type ColorType = typeof Color;
+export type TagColorType = typeof TagColor;
+export type BackgroundType = typeof Background;
 
 export interface IPalette {
-  color: TypeColor;
-  background: TypeBackground;
-  tagColor: TypeTagColor;
+  color: ColorType;
+  tagColor: TagColorType;
+  background: BackgroundType;
 }
 
 const palette: IPalette = {
   color: Color,
-  background: Background,
   tagColor: TagColor,
+  background: Background,
 };
 
 export default palette;

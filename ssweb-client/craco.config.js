@@ -1,12 +1,17 @@
 const path = require('path');
 
+const resolve = dir => path.resolve(__dirname, dir);
+
 module.exports = {
+  babel: {
+    plugins: [['@emotion', { labelFormat: '[filename]--[local]' }]],
+  },
   webpack: {
     extensions: ['.js', '.ts', '.tsx', '.d.ts', '.json'],
     alias: {
-      '@assets': path.resolve(__dirname, 'src/assets'),
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@assets': resolve('src/assets'),
+      '@components': resolve('src/components'),
+      '@styles': resolve('src/styles'),
     },
   },
   jest: {
