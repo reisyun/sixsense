@@ -1,16 +1,46 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint"],
   "env": {
+    "es6": true,
     "browser": true
   },
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    },
+    "ecmaFeatures": { "jsx": true },
     "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/react",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+        "tsx": "never",
+        "json": "never"
+      }
+    ]
   },
   "settings": {
     "react": {
@@ -26,35 +56,5 @@
         "extensions": [".js", ".ts", ".tsx", ".css", ".scss"]
       }
     }
-  },
-  "extends": [
-    "airbnb",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
-  ],
-  "rules": {
-    "no-shadow": "off",
-    "no-use-before-define": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "@typescript-eslint/no-use-before-define": "warn",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "import/prefer-default-export": "off",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "ts": "never",
-        "tsx": "never",
-        "json": "never"
-      }
-    ]
   }
 }
