@@ -5,6 +5,9 @@ import { Grid } from '../Grid';
 
 const content = `This is Button`;
 
+const variants = ['containe', 'outline', 'text'] as const;
+const sizes = ['small', 'medium', 'large'] as const;
+
 export default {
   title: 'SSWEB/Button',
   component: Button,
@@ -12,13 +15,13 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: ['none', 'containe', 'outline', 'text'],
+        options: variants,
       },
     },
     size: {
       control: {
         type: 'inline-radio',
-        options: ['small', 'medium', 'large'],
+        options: sizes,
       },
     },
     disabled: {
@@ -31,9 +34,17 @@ export default {
 
 export const Base: Story<ButtonProps> = args => <Button {...args}>{content}</Button>;
 
-const sizes = ['small', 'medium', 'large'] as const;
+export const Variants: Story<ButtonProps> = args => (
+  <Grid>
+    {variants.map(variants => (
+      <Button {...args} variant={variants}>
+        {content}
+      </Button>
+    ))}
+  </Grid>
+);
 
-export const Sizes = (args: ButtonProps) => {
+export const Sizes: Story<ButtonProps> = args => {
   return (
     <Grid>
       {sizes.map(size => (
@@ -44,18 +55,6 @@ export const Sizes = (args: ButtonProps) => {
     </Grid>
   );
 };
-
-const variants = ['containe', 'outline', 'text'] as const;
-
-export const Variants: Story<ButtonProps> = args => (
-  <Grid>
-    {variants.map(variants => (
-      <Button {...args} variant={variants}>
-        {content}
-      </Button>
-    ))}
-  </Grid>
-);
 
 export const Disabled: Story<ButtonProps> = args => (
   <Button {...args} disabled>
