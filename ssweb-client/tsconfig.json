@@ -2,7 +2,11 @@
   "compilerOptions": {
     "sourceMap": true,
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,5 +22,9 @@
     "jsx": "react-jsx"
   },
   "extends": "./tsconfig.paths.json",
-  "include": ["src", "test", "craco.config.js"]
+  "include": [
+    "src",
+    "test",
+    "craco.config.js"
+  ]
 }
