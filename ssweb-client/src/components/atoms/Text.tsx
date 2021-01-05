@@ -1,56 +1,64 @@
-import React from 'react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { ThemeProps } from '@styles/theme';
 import { ColorType } from '@styles/theme/palette';
 import { FontSizeType } from '@styles/theme/size';
 import toEllipsis from '@styles/utils/ellipsis';
 
-/**
- * Text styles
- */
+type Color = keyof ColorType;
+type Size = keyof FontSizeType;
+type Ellipsis = boolean | { lines?: number };
 
-type EllipsisConfig = {
-  lines?: number;
-};
-
-interface StyledTextProps {
-  color: keyof ColorType;
-  fontSize: keyof FontSizeType;
-  strong: boolean;
-  ellipsis: boolean | EllipsisConfig;
+export interface TextProps {
+  color?: Color;
+  fontSize?: Size;
+  bold?: boolean;
+  italic?: boolean;
+  ellipsis?: Ellipsis;
 }
 
-const StyledText = styled.span<StyledTextProps>`
+const baseStyles = css`
   line-height: 1.5;
   word-break: break-word;
-
-  color: ${props => props.color && props.theme.palette.color[props.color]};
-  font-size: ${props => props.fontSize && props.theme.size.fontSize[props.fontSize]};
-  font-weight: ${props => (props.strong ? 'bold' : 'inherit')};
-
-  ${({ ellipsis }) =>
-    /* EllipsisConfig가 있으면 설정에 따라 적용, 만약 boolean으로 넘어오면 true만 적용 */
-    typeof ellipsis === 'object' ? toEllipsis(ellipsis.lines) : ellipsis && toEllipsis()}
 `;
+
+const colorStyles = ({ theme, color = 'primary' }: TextProps & ThemeProps) =>
+  color &&
+  css`
+    color: ${theme.palette.color[color]};
+  `;
+
+const sizeStyles = ({ theme, fontSize = 'md' }: TextProps & ThemeProps) =>
+  fontSize &&
+  css`
+    font-size: ${theme.size.fontSize[fontSize]};
+  `;
+
+const boldStyles = ({ bold }: TextProps) =>
+  bold &&
+  css`
+    font-weight: bold;
+  `;
+
+const italicStyles = ({ italic }: TextProps) =>
+  italic &&
+  css`
+    font-style: italic;
+  `;
+
+const ellipsisStyles = ({ ellipsis }: TextProps) =>
+  typeof ellipsis === 'object' ? toEllipsis(ellipsis.lines) : ellipsis && toEllipsis();
 
 /**
  * Text component
  */
-
-export interface TextProps extends StyledTextProps {
-  children: React.ReactText;
-}
-
-function Text({ children, ...rest }: TextProps) {
-  return <StyledText {...rest}>{children}</StyledText>;
-}
-
-const defaultProps: StyledTextProps = {
-  color: 'primary',
-  fontSize: 'md',
-  strong: false,
-  ellipsis: false,
-};
-
-Text.defaultProps = defaultProps;
+const Text = styled.span<TextProps>(
+  baseStyles,
+  colorStyles,
+  sizeStyles,
+  boldStyles,
+  italicStyles,
+  ellipsisStyles,
+);
 
 export default Text;

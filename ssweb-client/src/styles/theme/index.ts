@@ -6,6 +6,8 @@ export interface ITheme {
   palette: IPalette;
 }
 
+export type ThemeProps = { theme: ITheme };
+
 const theme: ITheme = {
   size,
   palette,
