@@ -1,19 +1,19 @@
-enum FontSize {
-  xs = '12px',
-  sm = '14px',
-  md = '16px',
-  lg = '20px',
-  xl = '24px',
-}
+const fontSize = {
+  xs: '12px',
+  sm: '14px',
+  md: '16px',
+  lg: '20px',
+  xl: '24px',
+};
 
-enum IconSize {
-  small = '16px',
-  medium = '20px',
-  large = '24px',
-}
+const iconSize = {
+  small: '16px',
+  medium: '20px',
+  large: '24px',
+};
 
-export type FontSizeType = typeof FontSize;
-export type IconSizeType = typeof IconSize;
+export type FontSizeType = typeof fontSize;
+export type IconSizeType = typeof iconSize;
 
 export interface ISize {
   fontSize: FontSizeType;
@@ -21,8 +21,8 @@ export interface ISize {
 }
 
 const size: ISize = {
-  fontSize: FontSize,
-  iconSize: IconSize,
+  fontSize,
+  iconSize,
 };
 
 export default size;
