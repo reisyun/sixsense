@@ -1,11 +1,15 @@
+import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { lighten } from 'polished';
 import { ThemeProps } from '@styles/theme';
 
+type Size = 'small' | 'medium' | 'large';
+type Variant = 'none' | 'containe' | 'outline' | 'text';
+
 export interface ButtonProps {
-  variant?: 'containe' | 'outline' | 'text' | 'none';
-  size?: 'small' | 'medium' | 'large';
+  size?: Size;
+  variant?: Variant;
   disabled?: boolean;
 }
 
@@ -30,82 +34,55 @@ const baseStyles = css`
   }
 `;
 
-const variantStyles = ({ theme, variant = 'none' }: ButtonProps & ThemeProps) => {
-  const variantButton = Object.create(null);
-  /**
-   * containe
-   */
-  variantButton.containe = css`
-    background: ${theme.palette.color.main};
-    color: ${theme.palette.color.white};
-
-    &:hover {
-      background: ${lighten(0.04, theme.palette.color.main)};
-    }
-  `;
-
-  /**
-   * outline
-   */
-  variantButton.outline = css`
-    border: 1px solid ${theme.palette.background.divider};
-
-    &:hover {
-      background: ${theme.palette.overlay.hover};
-    }
-  `;
-
-  /**
-   * text
-   */
-  variantButton.text = css`
-    background: transparent;
-    color: ${theme.palette.color.main};
-
-    &:hover {
-      background: ${theme.palette.overlay.hover};
-    }
-  `;
-
-  /**
-   * none
-   */
-  variantButton.none = null;
-
-  return variantButton[variant];
+const sizeStyles = ({ theme, size = 'medium' }: ButtonProps & ThemeProps) => {
+  return {
+    small: css`
+      padding: 0 16px;
+      height: 32px;
+      font-size: ${theme.size.fontSize.xs};
+    `,
+    medium: css`
+      padding: 0 24px;
+      height: 40px;
+      font-size: ${theme.size.fontSize.sm};
+    `,
+    large: css`
+      padding: 0 32px;
+      height: 48px;
+      font-size: ${theme.size.fontSize.md};
+    `,
+  }[size];
 };
 
-const sizeStyles = ({ theme, size = 'medium' }: ButtonProps & ThemeProps) => {
-  const sizeButton = Object.create(null);
+const variantStyles = ({ theme, variant = 'none' }: ButtonProps & ThemeProps) => {
+  return {
+    none: null,
+    containe: css`
+      background: ${theme.palette.color.main};
+      color: ${theme.palette.color.white};
 
-  /**
-   * small
-   */
-  sizeButton.small = css`
-    padding: 0 16px;
-    height: 32px;
-    font-size: ${theme.size.fontSize.xs};
-  `;
+      &:hover {
+        background: ${lighten(0.04, theme.palette.color.main)};
+      }
+    `,
+    outline: css`
+      background: transparent;
+      color: ${theme.palette.color.primary};
+      border: 1px solid ${theme.palette.background.divider};
 
-  /**
-   * medium
-   */
-  sizeButton.medium = css`
-    padding: 0 24px;
-    height: 40px;
-    font-size: ${theme.size.fontSize.sm};
-  `;
+      &:hover {
+        background: ${theme.palette.overlay.hover};
+      }
+    `,
+    text: css`
+      background: transparent;
+      color: ${theme.palette.color.main};
 
-  /**
-   * large
-   */
-  sizeButton.large = css`
-    padding: 0 32px;
-    height: 48px;
-    font-size: ${theme.size.fontSize.md};
-  `;
-
-  return sizeButton[size];
+      &:hover {
+        background: ${theme.palette.overlay.hover};
+      }
+    `,
+  }[variant];
 };
 
 const disabledStyles = ({ theme, disabled }: ButtonProps & ThemeProps) =>
@@ -123,6 +100,11 @@ const disabledStyles = ({ theme, disabled }: ButtonProps & ThemeProps) =>
 /**
  * Button component
  */
-const Button = styled.button<ButtonProps>(baseStyles, variantStyles, sizeStyles, disabledStyles);
+const Button: React.FC<ButtonProps> = styled.button<ButtonProps>(
+  baseStyles,
+  sizeStyles,
+  variantStyles,
+  disabledStyles,
+);
 
 export default Button;
