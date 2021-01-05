@@ -34,7 +34,11 @@ export default {
   },
 } as Meta;
 
-export const Base = (args: TextProps) => <Text {...args}>{content}</Text>;
+export const Base = (args: TextProps) => (
+  <div style={{ width: '240px' }}>
+    <Text {...args}>{content}</Text>
+  </div>
+);
 
 const sizes: Array<keyof FontSizeType> = ['xs', 'sm', 'md', 'lg', 'xl'];
 
@@ -61,7 +65,7 @@ export const Italic = (args: TextProps) => (
 );
 
 export const Ellipsis = (args: TextProps) => (
-  <div style={{ width: '300px' }}>
+  <div style={{ width: '240px' }}>
     <Text {...args} ellipsis>
       {content}
     </Text>
