@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { FontSizeType } from '@styles/theme/size';
-import { ColorType } from '@styles/theme/palette';
-import Text, { TextProps } from '@components/atoms/Text';
+import { FontSizeType } from '@/styles/theme/size';
+import { ColorType } from '@/styles/theme/palette';
+import Text, { TextProps } from '@/components/atoms/Text';
 import { Grid } from '../Grid';
 
 const content = `Lorem Ipsum is simply dummy text of the printing.`;

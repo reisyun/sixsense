@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { IconSizeType } from '@styles/theme/size';
-import { ColorType } from '@styles/theme/palette';
-import Icon, { IconProps } from '@components/atoms/Icon';
+import { IconSizeType } from '@/styles/theme/size';
+import { ColorType } from '@/styles/theme/palette';
+import Icon, { IconProps } from '@/components/atoms/Icon';
 import { Grid } from '../Grid';
 
 const sizes: Array<keyof IconSizeType> = ['small', 'medium', 'large'];

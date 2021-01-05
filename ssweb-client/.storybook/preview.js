@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider, Global } from '@emotion/react';
-import theme from '@styles/theme';
-import global from '@styles/global';
+import theme from '@/styles/theme';
+import global from '@/styles/global';
 
 export const parameters = {
   layout: 'centered',

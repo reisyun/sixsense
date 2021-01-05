@@ -1,10 +1,10 @@
 import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { ThemeProps } from '@styles/theme';
-import { ColorType } from '@styles/theme/palette';
-import { FontSizeType } from '@styles/theme/size';
-import toEllipsis from '@styles/utils/ellipsis';
+import { ThemeProps } from '@/styles/theme';
+import { ColorType } from '@/styles/theme/palette';
+import { FontSizeType } from '@/styles/theme/size';
+import toEllipsis from '@/styles/utils/ellipsis';
 
 type Color = keyof ColorType;
 type Size = keyof FontSizeType;

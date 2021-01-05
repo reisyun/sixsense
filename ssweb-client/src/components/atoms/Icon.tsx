@@ -2,10 +2,10 @@ import React from 'react';
 import { size as iconSize } from 'polished';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { ThemeProps } from '@styles/theme';
-import { IconSizeType } from '@styles/theme/size';
-import { ColorType } from '@styles/theme/palette';
-import * as icons from '@assets/icons';
+import { ThemeProps } from '@/styles/theme';
+import { IconSizeType } from '@/styles/theme/size';
+import { ColorType } from '@/styles/theme/palette';
+import * as icons from '@/assets/icons';
 
 type Color = keyof ColorType;
 type Size = keyof IconSizeType;

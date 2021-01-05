@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider, Global } from '@emotion/react';
-import theme from '@styles/theme';
-import global from '@styles/global';
-import Layout from '@components/templates/Layout';
-import Jlog from '@components/views/Jlog';
+import theme from '@/styles/theme';
+import global from '@/styles/global';
+import Layout from '@/components/templates/Layout';
+import Jlog from '@/components/views/Jlog';
 
 const routes = [
   {

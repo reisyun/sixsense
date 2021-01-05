@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { lighten } from 'polished';
-import { ThemeProps } from '@styles/theme';
+import { ThemeProps } from '@/styles/theme';
 
 type Size = 'small' | 'medium' | 'large';
 type Variant = 'none' | 'containe' | 'outline' | 'text';
