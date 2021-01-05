@@ -1,9 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
+import { capitalize } from '@/utils/capitalize';
 import Button, { ButtonProps } from '@/components/atoms/Button';
 import { Grid } from '../Grid';
 
-const content = `This is Button`;
+const content = `Hello world`;
 
 const variants = ['containe', 'outline', 'text'] as const;
 const sizes = ['small', 'medium', 'large'] as const;
@@ -36,9 +37,9 @@ export const Base: Story<ButtonProps> = args => <Button {...args}>{content}</But
 
 export const Variants: Story<ButtonProps> = args => (
   <Grid>
-    {variants.map(variants => (
-      <Button {...args} variant={variants}>
-        {content}
+    {variants.map(variant => (
+      <Button {...args} variant={variant}>
+        {capitalize(variant)}
       </Button>
     ))}
   </Grid>
@@ -49,7 +50,7 @@ export const Sizes: Story<ButtonProps> = args => {
     <Grid>
       {sizes.map(size => (
         <Button key={size} {...args} size={size} variant="containe">
-          {content}
+          {capitalize(size)}
         </Button>
       ))}
     </Grid>
