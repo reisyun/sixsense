@@ -60,9 +60,4 @@ function Icon({ icon, ...rest }: IconProps) {
   );
 }
 
-Icon.defaultProps = {
-  size: 'large',
-  color: 'secondary',
-};
-
 export default Icon;
