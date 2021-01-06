@@ -6,12 +6,12 @@ import { Box } from '@/stories/Box';
 const mock: EventCardListProps['data'] = [
   {
     image: 'https://source.unsplash.com/Yn7NXC5SFQo/300x300',
-    title: 'hello',
+    title: 'hello world',
     date: '2021년 1월 12일',
   },
   {
     image: 'https://source.unsplash.com/Yn7NXC5SFQo/300x300',
-    title: 'world',
+    title: 'Lorem Ipsum is simply dummy text of the printing.',
     date: '2021년 1월 13일',
   },
   {
