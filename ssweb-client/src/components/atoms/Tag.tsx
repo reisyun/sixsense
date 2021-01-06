@@ -18,6 +18,7 @@ const baseStyles = css`
   padding: 0 12px;
   margin-right: 8px;
   margin-bottom: 8px;
+  color: white;
 `;
 
 const colorStyles = ({ theme, color = 'all' }: TagProps & ThemeProps) =>
