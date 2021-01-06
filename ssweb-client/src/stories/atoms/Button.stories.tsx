@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { capitalize } from '@/utils/capitalize';
 import Button, { ButtonProps } from '@/components/atoms/Button';
-import { Grid } from '../Grid';
+import { Grid } from '@/stories/Grid';
 
 const content = `Hello world`;
 
@@ -10,7 +10,7 @@ const variants = ['containe', 'outline', 'text'] as const;
 const sizes = ['small', 'medium', 'large'] as const;
 
 export default {
-  title: 'SSWEB/Button',
+  title: 'ATOMS/Button',
   component: Button,
   argTypes: {
     variant: {

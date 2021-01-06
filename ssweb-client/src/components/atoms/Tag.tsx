@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ThemeProps } from '@/styles/theme';
@@ -16,8 +15,6 @@ const baseStyles = css`
   display: inline-flex;
   align-items: center;
   padding: 0 12px;
-  margin-right: 8px;
-  margin-bottom: 8px;
   color: white;
 `;
 
@@ -42,5 +39,9 @@ const sizeStyles = ({ theme, size = 'default' }: TagProps & ThemeProps) => {
   }[size];
 };
 
-const Tag: React.FC<TagProps> = styled.div(baseStyles, colorStyles, sizeStyles);
+/**
+ * Tag component
+ */
+const Tag = styled.div<TagProps>(baseStyles, colorStyles, sizeStyles);
+
 export default Tag;

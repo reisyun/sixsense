@@ -6,7 +6,7 @@ const content1 = `Lorem Ipsum`;
 const content2 = `Simply dummy text`;
 
 export default {
-  title: 'SSWEB/Divider',
+  title: 'ATOMS/Divider',
   component: Divider,
   argTypes: {
     vertical: {

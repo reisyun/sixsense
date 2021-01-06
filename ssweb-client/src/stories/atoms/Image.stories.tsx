@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0';
 import Image, { ImageProps } from '@/components/atoms/Image';
 
 export default {
-  title: 'SSWEB/Image',
+  title: 'ATOMS/Image',
   component: Image,
   argTypes: {
     circle: {

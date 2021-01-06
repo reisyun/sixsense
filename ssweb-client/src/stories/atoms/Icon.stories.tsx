@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { IconSizeType } from '@/styles/theme/size';
 import { ColorType } from '@/styles/theme/palette';
 import Icon, { IconProps } from '@/components/atoms/Icon';
-import { Grid } from '../Grid';
+import { Grid } from '@/stories/Grid';
 
 const sizes: Array<keyof IconSizeType> = ['small', 'medium', 'large'];
 const colors: Array<keyof ColorType> = [
@@ -17,7 +17,7 @@ const colors: Array<keyof ColorType> = [
 ];
 
 export default {
-  title: 'SSWEB/Icon',
+  title: 'ATOMS/Icon',
   component: Icon,
   argTypes: {
     size: {

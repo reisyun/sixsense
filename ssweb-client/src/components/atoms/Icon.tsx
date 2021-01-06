@@ -35,11 +35,7 @@ const sizeStyles = ({ theme, size = 'large' }: StyledIconProps & ThemeProps) =>
     }
   `;
 
-const StyledIcon: React.FC<StyledIconProps> = styled.i<StyledIconProps>(
-  baseStyles,
-  colorStyles,
-  sizeStyles,
-);
+const StyledIcon = styled.i<StyledIconProps>(baseStyles, colorStyles, sizeStyles);
 
 /**
  * Icon component

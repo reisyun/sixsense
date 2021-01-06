@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ThemeProps } from '@/styles/theme';
@@ -53,7 +52,7 @@ const ellipsisStyles = ({ ellipsis }: TextProps) =>
 /**
  * Text component
  */
-const Text: React.FC<TextProps> = styled.span<TextProps>(
+const Text = styled.span<TextProps>(
   baseStyles,
   colorStyles,
   sizeStyles,
