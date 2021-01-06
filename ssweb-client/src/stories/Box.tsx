@@ -6,4 +6,5 @@ export interface BoxProps {
 
 export const Box = styled.div<BoxProps>`
   width: ${props => props.width || '90vw'};
+  max-width: 800px;
 `;

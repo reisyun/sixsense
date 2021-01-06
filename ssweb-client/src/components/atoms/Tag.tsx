@@ -15,8 +15,6 @@ const baseStyles = css`
   display: inline-flex;
   align-items: center;
   padding: 0 12px;
-  margin-right: 8px;
-  margin-bottom: 8px;
   color: white;
 `;
 
