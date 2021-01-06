@@ -1,20 +1,31 @@
 # SSWEB-client
 
-## Installation
+<div align="center" style="max-width: 1200px">
+  <img src="../assets/frontend-storybook.png" />
+</div>
+
+---
+
+## How can I see the work?
+
+### 1. SSWEB Project 복제
 
 ```bash
-$ yarn install
+$ git clone https://github.com/J2KB/SixSense-SSWEB.git
 ```
 
-## Available Scripts
+### 2. Dependency를 설치합니다
 
 ```bash
-# Runs the app in the development mode.
-$ yarn start
+$ cd SixSense-SSWEB/ssweb-client
 
-# Launches the test runner in the interactive watch mode.
-$ yarn test
+# or npm install
+$ yarn
+```
 
-# Builds the app for production to the `build` folder.
-$ yarn build
+### 3. 이제 로컬에서 확인하실 수 있습니다!
+
+```bash
+# or npm run start:storybook
+$ yarn start:storybook
 ```
