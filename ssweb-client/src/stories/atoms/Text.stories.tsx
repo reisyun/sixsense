@@ -3,7 +3,8 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { FontSizeType } from '@/styles/theme/size';
 import { ColorType } from '@/styles/theme/palette';
 import Text, { TextProps } from '@/components/atoms/Text';
-import { Grid } from '../Grid';
+import { Grid } from '@/stories/Grid';
+import { Box } from '@/stories/Box';
 
 const content = `Lorem Ipsum is simply dummy text of the printing.`;
 
@@ -53,9 +54,9 @@ export default {
 } as Meta;
 
 export const Base: Story<TextProps> = args => (
-  <div style={{ width: '240px' }}>
+  <Box width="30vw">
     <Text {...args}>{content}</Text>
-  </div>
+  </Box>
 );
 
 export const Sizes: Story<TextProps> = args => {
@@ -95,9 +96,9 @@ export const Italic: Story<TextProps> = args => (
 );
 
 export const Ellipsis: Story<TextProps> = args => (
-  <div style={{ width: '240px' }}>
+  <Box width="30vw">
     <Text {...args} ellipsis>
       {content}
     </Text>
-  </div>
+  </Box>
 );

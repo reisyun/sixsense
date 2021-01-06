@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { capitalize } from '@/utils/capitalize';
 import Button, { ButtonProps } from '@/components/atoms/Button';
-import { Grid } from '../Grid';
+import { Grid } from '@/stories/Grid';
 
 const content = `Hello world`;
 
