@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { lighten } from 'polished';
@@ -68,7 +67,7 @@ const variantStyles = ({ theme, variant = 'none' }: ButtonProps & ThemeProps) =>
     outline: css`
       background: transparent;
       color: ${theme.palette.color.primary};
-      border: 1px solid ${theme.palette.background.divider};
+      border: 1px solid ${theme.palette.divider};
 
       &:hover {
         background: ${theme.palette.overlay.hover};
@@ -100,11 +99,6 @@ const disabledStyles = ({ theme, disabled }: ButtonProps & ThemeProps) =>
 /**
  * Button component
  */
-const Button: React.FC<ButtonProps> = styled.button<ButtonProps>(
-  baseStyles,
-  sizeStyles,
-  variantStyles,
-  disabledStyles,
-);
+const Button = styled.button<ButtonProps>(baseStyles, sizeStyles, variantStyles, disabledStyles);
 
 export default Button;

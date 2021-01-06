@@ -11,7 +11,7 @@ const baseStyles = ({ theme, vertical = false }: DividerProps & ThemeProps) => {
     horizon: css`
       margin: 0;
       width: 100%;
-      border-color: ${theme.palette.background.divider};
+      border-color: ${theme.palette.divider};
     `,
     vertical: css`
       display: inline-block;
@@ -19,7 +19,7 @@ const baseStyles = ({ theme, vertical = false }: DividerProps & ThemeProps) => {
       width: 1px;
       height: 1em;
       vertical-align: middle;
-      border-color: ${theme.palette.background.divider};
+      border-color: ${theme.palette.divider};
     `,
   };
 

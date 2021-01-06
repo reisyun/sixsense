@@ -1,9 +1,8 @@
-import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export interface ImageProps {
-  circle: boolean;
+  circle?: boolean;
 }
 
 const baseStyles = css`
@@ -13,7 +12,7 @@ const baseStyles = css`
   height: auto;
 `;
 
-const circleStyles = ({ circle }: ImageProps) =>
+const circleStyles = ({ circle = false }: ImageProps) =>
   circle &&
   css`
     border-radius: 50% !important;
@@ -22,6 +21,6 @@ const circleStyles = ({ circle }: ImageProps) =>
 /**
  * Image component
  */
-const Image: React.FC<ImageProps> = styled.img<ImageProps>(baseStyles, circleStyles);
+const Image = styled.img<ImageProps>(baseStyles, circleStyles);
 
 export default Image;

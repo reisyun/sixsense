@@ -22,8 +22,9 @@ const background = {
   default: '#F7F9FC',
   disabled: '#EEEEEE',
   level1: '#EFEFE',
-  divider: '#E0E0E0',
 };
+
+const divider = rgba(color.black, 0.12);
 
 const overlay = {
   hover: rgba(color.black, 0.04),
@@ -35,12 +36,14 @@ const overlay = {
 export type ColorType = typeof color;
 export type TagColorType = typeof tagColor;
 export type BackgroundType = typeof background;
+export type DividerType = typeof divider;
 export type OverlayType = typeof overlay;
 
 export interface IPalette {
   color: ColorType;
   tagColor: TagColorType;
   background: BackgroundType;
+  divider: DividerType;
   overlay: OverlayType;
 }
 
@@ -48,6 +51,7 @@ const palette: IPalette = {
   color,
   tagColor,
   background,
+  divider,
   overlay,
 };
 
