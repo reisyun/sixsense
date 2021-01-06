@@ -17,7 +17,7 @@ const colors: Array<keyof ColorType> = [
 ];
 
 export default {
-  title: 'SSWEB/Icon',
+  title: 'ATOMS/Icon',
   component: Icon,
   argTypes: {
     size: {

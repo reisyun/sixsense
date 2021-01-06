@@ -19,7 +19,7 @@ const colors: Array<keyof ColorType> = [
 ];
 
 export default {
-  title: 'SSWEB/Text',
+  title: 'ATOMS/Text',
   component: Text,
   argTypes: {
     color: {

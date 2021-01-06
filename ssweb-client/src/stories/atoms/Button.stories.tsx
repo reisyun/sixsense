@@ -10,7 +10,7 @@ const variants = ['containe', 'outline', 'text'] as const;
 const sizes = ['small', 'medium', 'large'] as const;
 
 export default {
-  title: 'SSWEB/Button',
+  title: 'ATOMS/Button',
   component: Button,
   argTypes: {
     variant: {

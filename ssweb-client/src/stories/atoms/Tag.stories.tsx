@@ -11,7 +11,7 @@ const sizes = ['small', 'default'] as const;
 const colors: Array<keyof TagColorType> = ['all', 'frontEnd', 'backEnd', 'dataScience', 'devOps'];
 
 export default {
-  title: 'SSWEB/Tag',
+  title: 'ATOMS/Tag',
   component: Tag,
   argTypes: {
     size: {
