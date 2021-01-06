@@ -26,6 +26,9 @@ const baseStyles = ({ theme, vertical = false }: DividerProps & ThemeProps) => {
   return vertical ? divider.vertical : divider.horizon;
 };
 
+/**
+ * Divider component
+ */
 const Divider = styled.hr<DividerProps>(baseStyles);
 
 export default Divider;
