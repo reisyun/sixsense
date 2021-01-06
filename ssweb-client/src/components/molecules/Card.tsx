@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Image from '@/components/atoms/Image';
+import Divider from '@/components/atoms/Divider';
 
 const CardItemBlock = styled.article`
   position: relative;
@@ -31,24 +32,42 @@ const Content = styled.div`
   flex-direction: column;
   flex: 1 1 0;
   margin-top: 12px;
+  padding: 0 16px;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
 `;
 
 export interface CardProps {
   children: React.ReactNode;
   image?: string;
+  footer?: React.ReactNode;
 }
 
-function Card({ children, image }: CardProps) {
+function Card({ children, image, footer }: CardProps) {
   const renderImage = () => (
     <Cover>
       <Poster src={image} alt="lala" />
     </Cover>
   );
 
+  const renderFooter = (footer: React.ReactNode) => (
+    <>
+      <Divider />
+      <Footer>{footer}</Footer>
+    </>
+  );
+
   return (
     <CardItemBlock>
       {image && renderImage()}
       <Content>{children}</Content>
+      {footer && renderFooter(footer)}
     </CardItemBlock>
   );
 }

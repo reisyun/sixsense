@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Card from '@/components/molecules/Card';
 import Text from '@/components/atoms/Text';
-import Divider from '../atoms/Divider';
 
 const EventCardListWrapper = styled.div`
   position: relative;
@@ -12,20 +11,8 @@ const EventCardListWrapper = styled.div`
   width: 100%;
 `;
 
-const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 0;
-  padding: 0 16px;
-`;
-
 const Date = styled(Text)``;
 const Title = styled(Text)``;
-
-const Footer = styled.div`
-  height: 40px;
-  padding: 0 16px;
-`;
 
 export interface EventCardListProps {
   data: Array<{
@@ -37,17 +24,13 @@ export interface EventCardListProps {
 
 function EventCardList({ data }: EventCardListProps) {
   const cardList = data.map(({ title, image, date }) => (
-    <Card key={title} image={image}>
-      <Info>
-        <Date fontSize="xs" color="secondary">
-          {date}
-        </Date>
-        <Title fontSize="sm" color="primary" bold>
-          {title}
-        </Title>
-      </Info>
-      <Divider />
-      <Footer />
+    <Card key={title} image={image} footer="test">
+      <Date fontSize="xs" color="secondary">
+        {date}
+      </Date>
+      <Title fontSize="sm" color="primary" bold>
+        {title}
+      </Title>
     </Card>
   ));
 
