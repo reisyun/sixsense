@@ -1,5 +1,7 @@
+import { css } from '@emotion/react';
+
 function ellipsis(lines = 1) {
-  const oneLineStyles = `
+  const oneLineStyles = css`
     display: inline-block;
     max-width: 100%;
     overflow: hidden;
@@ -7,7 +9,7 @@ function ellipsis(lines = 1) {
     white-space: nowrap;
   `;
 
-  const multipleLineStyles = `
+  const multipleLineStyles = css`
     display: -webkit-box;
     -webkit-line-clamp: ${lines};
     -webkit-box-orient: vertical;

@@ -9,15 +9,13 @@ module.exports = {
   webpack: {
     extensions: ['.js', '.ts', '.tsx', '.d.ts', '.json'],
     alias: {
-      '@assets': resolve('src/assets'),
-      '@components': resolve('src/components'),
-      '@styles': resolve('src/styles'),
+      '@': resolve('src'),
     },
   },
   jest: {
     configure: {
       moduleNameMapper: {
-        '^@components(.*)$': '<rootDir>/src/components$1',
+        '^@/(.*)$': '<rootDir>/src/$1',
       },
     },
   },

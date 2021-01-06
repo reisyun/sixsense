@@ -50,11 +50,7 @@
     },
     "import/resolver": {
       "alias": {
-        "map": [
-          ["@assets", "./src/assets"],
-          ["@components", "./src/components"],
-          ["@styles", "./src/styles"]
-        ],
+        "map": [["@", "./src"]],
         "extensions": [".js", ".ts", ".tsx", ".css", ".scss"]
       }
     }
