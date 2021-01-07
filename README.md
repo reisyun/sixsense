@@ -4,9 +4,7 @@
 
 <br/>
 
-<div align="center">
-  <img src="./assets/sixsense-page.png" width="80%"/>
-</div>
+<img src="./assets/sixsense-page.png" />
 
 > [프로토타입 보러 가기](https://www.figma.com/file/LrlEAm7GPvM0eq8Uq9j6rB/sixsense?node-id=41%3A3587)
 
