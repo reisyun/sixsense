@@ -1,6 +1,9 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import Card, { CardProps } from '@/components/molecules/Card';
+import { Box } from '@/stories/Box';
+
+const content = 'Content';
 
 export default {
   title: 'MOLECULES/Card',
@@ -11,25 +14,33 @@ export default {
         type: 'text',
       },
     },
+    footer: {
+      control: {
+        type: 'text',
+      },
+    },
   },
+  decorators: [
+    Story => (
+      <Box width="30vw">
+        <Story />
+      </Box>
+    ),
+  ],
 } as Meta;
 
-export const Base: Story<CardProps> = args => (
-  <div style={{ width: '240px' }}>
-    <Card {...args}>Content</Card>
-  </div>
-);
+export const Base: Story<CardProps> = args => <Card {...args}>{content}</Card>;
 
 export const Image: Story<CardProps> = args => (
-  <div style={{ width: '240px' }}>
-    <Card {...args} image="https://source.unsplash.com/Yn7NXC5SFQo/300x300">
-      Content
-    </Card>
-  </div>
+  <Card {...args} image="https://source.unsplash.com/Yn7NXC5SFQo/300x300">
+    {content}
+  </Card>
 );
 
-export const Text: Story<CardProps> = args => (
-  <div style={{ width: '240px' }}>
-    <Card {...args}>Content</Card>
-  </div>
+export const Text: Story<CardProps> = args => <Card {...args}>{content}</Card>;
+
+export const Footer: Story<CardProps> = args => (
+  <Card {...args} footer="footer">
+    {content}
+  </Card>
 );

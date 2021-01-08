@@ -10,16 +10,8 @@ const color = {
   black: '#000',
 };
 
-const tagColor = {
-  all: '#767676',
-  dataScience: '#2C3E50',
-  frontEnd: '#2980B9',
-  backEnd: '#40407A',
-  devOps: '#CD6133',
-};
-
 const background = {
-  default: '#F7F9FC',
+  default: '#F4F7FB',
   disabled: '#EEEEEE',
   level1: '#EFEFE',
 };
@@ -34,14 +26,12 @@ const overlay = {
 };
 
 export type ColorType = typeof color;
-export type TagColorType = typeof tagColor;
 export type BackgroundType = typeof background;
 export type DividerType = typeof divider;
 export type OverlayType = typeof overlay;
 
 export interface IPalette {
   color: ColorType;
-  tagColor: TagColorType;
   background: BackgroundType;
   divider: DividerType;
   overlay: OverlayType;
@@ -49,7 +39,6 @@ export interface IPalette {
 
 const palette: IPalette = {
   color,
-  tagColor,
   background,
   divider,
   overlay,
