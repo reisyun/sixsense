@@ -9,13 +9,15 @@ export const useOutsideClick = (
 ) => {
   useEffect(() => {
     const handleMouseDown = (event: any) => {
-      if (target.current && !target.current.contains(event.target)) {
+      const internal = target.current && !target.current.contains(event.target);
+
+      // 클릭한 곳이 타겟의 내부인 경우
+      if (internal) {
         handler(event);
       }
     };
 
     document.addEventListener('mousedown', handleMouseDown, { passive: false });
-
     return () => {
       document.removeEventListener('mousedown', handleMouseDown);
     };
