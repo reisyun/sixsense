@@ -3,17 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider, Global } from '@emotion/react';
 import theme from '@/styles/theme';
 import global from '@/styles/global';
+import { routes } from '@/libs/routes';
 import Layout from '@/components/templates/Layout';
-import Jlog from '@/components/views/Jlog';
-
-const routes = [
-  {
-    name: 'JLOG',
-    path: '/',
-    exact: true,
-    component: Jlog,
-  },
-];
 
 function App() {
   const route = routes.map(({ path, component, exact }) => (
@@ -23,11 +14,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={global} />
-      <Layout>
-        <Router>
+      <Router>
+        <Layout>
           <Switch>{route}</Switch>
-        </Router>
-      </Layout>
+        </Layout>
+      </Router>
     </ThemeProvider>
   );
 }

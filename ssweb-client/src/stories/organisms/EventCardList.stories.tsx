@@ -1,22 +1,20 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
+import { EventInfoModel } from '@/libs/model';
 import EventCardList, { EventCardListProps } from '@/components/organisms/EventCardList';
 import { Box } from '@/stories/Box';
 
-const mock: EventCardListProps['data'] = [
-  {
-    image: 'https://source.unsplash.com/Yn7NXC5SFQo/300x300',
-    title: 'hello world',
-    date: '2021년 1월 12일',
-  },
+const mock: Array<EventInfoModel> = [
   {
     image: 'https://source.unsplash.com/Yn7NXC5SFQo/300x300',
     title: 'Lorem Ipsum is simply dummy text of the printing.',
     date: '2021년 1월 13일',
+    category: 'frontEnd',
   },
   {
     title: 'Only text',
     date: '2021년 1월 9일',
+    category: 'backEnd',
   },
 ];
 
@@ -32,4 +30,6 @@ export default {
   ],
 } as Meta;
 
-export const Base: Story<EventCardListProps> = args => <EventCardList {...args} data={mock} />;
+export const Base: Story<EventCardListProps> = args => (
+  <EventCardList {...args} initialCard={mock} />
+);

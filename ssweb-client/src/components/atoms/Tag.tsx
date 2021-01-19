@@ -1,14 +1,12 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ThemeProps } from '@/styles/theme';
-import { TagColorType } from '@/styles/theme/palette';
 
-type Color = keyof TagColorType;
 type Size = 'small' | 'default';
 
 export interface TagProps {
-  color?: Color;
   size?: Size;
+  active?: boolean;
 }
 
 const baseStyles = css`
@@ -17,12 +15,6 @@ const baseStyles = css`
   padding: 0 12px;
   color: white;
 `;
-
-const colorStyles = ({ theme, color = 'all' }: TagProps & ThemeProps) =>
-  color &&
-  css`
-    background: ${theme.palette.tagColor[color]};
-  `;
 
 const sizeStyles = ({ theme, size = 'default' }: TagProps & ThemeProps) => {
   return {
@@ -39,9 +31,18 @@ const sizeStyles = ({ theme, size = 'default' }: TagProps & ThemeProps) => {
   }[size];
 };
 
+const activeStyles = ({ theme, active = false }: TagProps & ThemeProps) =>
+  active
+    ? css`
+        background: ${theme.palette.color.primary};
+      `
+    : css`
+        background: ${theme.palette.color.secondary};
+      `;
+
 /**
  * Tag component
  */
-const Tag = styled.div<TagProps>(baseStyles, colorStyles, sizeStyles);
+const Tag = styled.div<TagProps>(baseStyles, sizeStyles, activeStyles);
 
 export default Tag;

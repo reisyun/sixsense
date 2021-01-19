@@ -3,12 +3,16 @@ import styled from '@emotion/styled';
 import Image from '@/components/atoms/Image';
 import Divider from '@/components/atoms/Divider';
 
+const CARD_BORDER_RADIUS = 4;
+
 const CardItemBlock = styled.article`
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08), 0px 4px 12px rgba(0, 0, 0, 0.12);
+  background: ${props => props.theme.palette.color.white};
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: ${CARD_BORDER_RADIUS}px;
 `;
 
 const Cover = styled.div`
@@ -23,7 +27,10 @@ const Poster = styled(Image)`
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 4px;
+
+  /* absolute라서 부모의 스타일 영향 안받음 */
+  border-top-left-radius: ${CARD_BORDER_RADIUS}px;
+  border-top-right-radius: ${CARD_BORDER_RADIUS}px;
 `;
 
 const Content = styled.div`
@@ -31,16 +38,15 @@ const Content = styled.div`
   flex-direction: column;
   flex: 1 1 0;
   margin-top: 12px;
-  padding: 0 16px 16px;
+  padding: 0 16px 8px;
   min-height: 120px;
 `;
 
 const Footer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 40px;
   padding: 0 16px;
+  height: 40px;
 `;
 
 export interface CardProps {
