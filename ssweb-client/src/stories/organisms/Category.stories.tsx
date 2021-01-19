@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import Category from '@/components/organisms/Category';
 
 export default {
-  title: 'MOLECULES/Category',
+  title: 'ORGANISMS/Category',
   component: Category,
 } as Meta;
 
