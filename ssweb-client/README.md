@@ -9,13 +9,13 @@
 ### 1. SSWEB Project 복제
 
 ```bash
-$ git clone https://github.com/J2KB/SixSense-SSWEB.git
+$ git clone https://github.com/reisyun/sixsense.git
 ```
 
 ### 2. Dependency를 설치합니다
 
 ```bash
-$ cd SixSense-SSWEB/ssweb-client
+$ cd sixsense/ssweb-client
 
 # or npm install
 $ yarn
