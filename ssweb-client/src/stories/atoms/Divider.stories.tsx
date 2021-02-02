@@ -9,11 +9,7 @@ export default {
   title: 'ATOMS/Divider',
   component: Divider,
   argTypes: {
-    vertical: {
-      control: {
-        type: 'boolean',
-      },
-    },
+    vertical: { control: 'boolean' },
   },
 } as Meta;
 

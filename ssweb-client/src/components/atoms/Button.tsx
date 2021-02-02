@@ -24,10 +24,6 @@ const baseStyles = css`
   transition: background 0.3s;
   cursor: pointer;
 
-  &:active {
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-  }
-
   & > span {
     margin: 0 8px;
   }

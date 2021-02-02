@@ -20,7 +20,13 @@ export default {
   ],
 } as Meta;
 
-const overlay = <Menu items={items} />;
+const overlay = (
+  <Menu>
+    {items.map(item => (
+      <Menu.Item>{item}</Menu.Item>
+    ))}
+  </Menu>
+);
 
 export const Base: Story<DropdownProps> = args => (
   <Dropdown {...args} overlay={overlay}>

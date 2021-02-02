@@ -35,21 +35,9 @@ export default {
         options: sizes,
       },
     },
-    bold: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    italic: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    ellipsis: {
-      control: {
-        type: 'boolean',
-      },
-    },
+    bold: { control: 'boolean' },
+    italic: { control: 'boolean' },
+    ellipsis: { control: 'boolean' },
   },
 } as Meta;
 

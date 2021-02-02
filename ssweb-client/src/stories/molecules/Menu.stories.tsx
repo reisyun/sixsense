@@ -9,4 +9,10 @@ export default {
   component: Menu,
 } as Meta;
 
-export const Base: Story = args => <Menu {...args} items={items} />;
+export const Base: Story = args => (
+  <Menu {...args}>
+    {items.map(item => (
+      <Menu.Item>{item}</Menu.Item>
+    ))}
+  </Menu>
+);

@@ -6,7 +6,6 @@ import Text from '@/components/atoms/Text';
 const TabsBlock = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 64px;
   width: 100%;
 `;
 

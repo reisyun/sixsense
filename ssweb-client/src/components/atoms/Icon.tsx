@@ -46,11 +46,11 @@ export interface IconProps extends StyledIconProps {
   icon: Icons;
 }
 
-function Icon({ icon, ...rest }: IconProps) {
+function Icon({ icon, ...props }: IconProps) {
   const SVG = icons[icon];
 
   return (
-    <StyledIcon {...rest}>
+    <StyledIcon {...props}>
       <SVG />
     </StyledIcon>
   );

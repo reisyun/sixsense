@@ -6,11 +6,7 @@ export default {
   title: 'ATOMS/Image',
   component: Image,
   argTypes: {
-    circle: {
-      control: {
-        type: 'boolean',
-      },
-    },
+    circle: { control: 'boolean' },
   },
 } as Meta;
 

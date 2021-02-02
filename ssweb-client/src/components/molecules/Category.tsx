@@ -1,13 +1,11 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import styled from '@emotion/styled';
 import { unique } from '@/libs/utils';
-import { EventInfoModel } from '@/libs/model';
 import Tag from '@/components/atoms/Tag';
 
 const CategoryWrapper = styled.div`
   position: relative;
   display: flex;
-  margin-bottom: 32px;
 
   & > div {
     margin-right: 8px;
@@ -19,30 +17,18 @@ const StyledTag = styled(Tag)`
 `;
 
 export interface CategoryProps {
-  children: React.ReactElement | React.ReactElement[];
+  items: string[];
 }
-
-const mock: Array<EventInfoModel> = [
-  {
-    title: 'hello world',
-    category: 'dataScience',
-  },
-  {
-    title: 'hello world',
-    category: 'frontEnd',
-  },
-];
 
 const CATEGORY_ALL = 'ALL' as const;
 
-function Category() {
-  const [category] = useState<EventInfoModel[]>(mock);
+function Category({ items }: CategoryProps) {
   const [active, setActive] = useState<string>(CATEGORY_ALL);
 
   // EventInfo의 중복된 category를 제거 후 배열로 반환
   const categories = useMemo(() => {
-    return unique(category.map(c => c.category));
-  }, [category]);
+    return unique(items);
+  }, [items]);
 
   // 클릭한 대상의 innerText를 setactive에 전달
   const handleClick = useCallback((event: React.MouseEvent<HTMLDivElement>) => {

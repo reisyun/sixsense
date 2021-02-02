@@ -10,7 +10,7 @@ const BannerBlock = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 480px;
+  height: 400px;
   background: ${props => props.theme.palette.color.white};
 `;
 

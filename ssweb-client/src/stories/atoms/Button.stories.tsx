@@ -25,11 +25,7 @@ export default {
         options: sizes,
       },
     },
-    disabled: {
-      control: {
-        type: 'boolean',
-      },
-    },
+    disabled: { control: 'boolean' },
   },
 } as Meta;
 

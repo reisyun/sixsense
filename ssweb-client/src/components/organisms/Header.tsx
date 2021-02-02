@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { size } from 'polished';
+import { ReactComponent as Logo } from '@/assets/icons/sixsense_logo.svg';
 import { routes } from '@/libs/routes';
 import { UserModel } from '@/libs/model';
 import { useScrollDown } from '@/hooks/useScrollDown';
 import Image from '@/components/atoms/Image';
-import logo from '@/assets/images/sixsense-logo.png';
 
 export const HEADER_HEIGHT = 72;
 
@@ -23,10 +23,6 @@ const HeadertWrapper = styled.header<{ hide: boolean }>`
   transition: 0.4s;
 
   ${props => props.hide && `transform: translateY(-${HEADER_HEIGHT}px);`}
-`;
-
-const Logo = styled(Image)`
-  width: 120px;
 `;
 
 const Nav = styled.nav`
@@ -80,7 +76,7 @@ function Header() {
 
   return (
     <HeadertWrapper hide={hide}>
-      <Logo src={logo} />
+      <Logo width="100" />
       <Nav>
         <NavList>{link}</NavList>
         {user?.avatar ? <Avatar src={user?.avatar} alt={user.name} /> : <NoAvatar />}

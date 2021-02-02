@@ -18,11 +18,7 @@ export default {
         options: sizes,
       },
     },
-    active: {
-      control: {
-        type: 'boolean',
-      },
-    },
+    active: { control: 'boolean' },
   },
 } as Meta;
 

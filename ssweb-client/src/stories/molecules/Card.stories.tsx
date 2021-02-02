@@ -9,16 +9,8 @@ export default {
   title: 'MOLECULES/Card',
   component: Card,
   argTypes: {
-    image: {
-      control: {
-        type: 'text',
-      },
-    },
-    footer: {
-      control: {
-        type: 'text',
-      },
-    },
+    image: { control: 'text' },
+    footer: { control: 'text' },
   },
   decorators: [
     Story => (

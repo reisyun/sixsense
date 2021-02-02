@@ -12,7 +12,7 @@ const color = {
 
 const background = {
   default: '#F4F7FB',
-  disabled: '#EEEEEE',
+  disabled: '#E6E6E6',
   level1: '#EFEFEF',
 };
 

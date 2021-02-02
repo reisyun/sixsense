@@ -4,7 +4,7 @@ import Banner from '@/components/molecules/Banner';
 
 const Content = styled.main`
   position: relative;
-  margin: 48px auto 100px;
+  margin-bottom: 100px;
   padding: 0 24px;
   width: 100%;
   max-width: 1400px;

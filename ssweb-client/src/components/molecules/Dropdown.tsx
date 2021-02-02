@@ -38,7 +38,7 @@ export interface DropdownProps {
 
 function Dropdown({ children, overlay, trigger }: DropdownProps) {
   const triggerRef = useRef(null);
-  const [isVisible, setVisible] = useState(false);
+  const [isVisible, setVisible] = useState<boolean>(false);
 
   // Overlay closes when click outside
   useOutsideClick(triggerRef, () => setVisible(false));

@@ -9,16 +9,8 @@ export default {
   title: 'MOLECULES/Banner',
   component: Banner,
   argTypes: {
-    title: {
-      control: {
-        type: 'text',
-      },
-    },
-    description: {
-      control: {
-        type: 'text',
-      },
-    },
+    title: { control: 'text' },
+    description: { control: 'text' },
   },
   decorators: [
     Story => (
